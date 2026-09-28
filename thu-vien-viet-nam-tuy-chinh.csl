@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="vi-VN" page-range-format="expanded">
   <info>
-    <title>Thư viện Việt Nam - kiểu số tùy chỉnh</title>
-    <id>http://www.zotero.org/styles/thu-vien-viet-nam-tuy-chinh</id>
-    <link href="http://www.zotero.org/styles/thu-vien-viet-nam-tuy-chinh" rel="self"/>
+<title>Thư viện Việt Nam - kiểu số tùy chỉnh V3</title>
+<id>http://www.zotero.org/styles/thu-vien-viet-nam-tuy-chinh-v3</id>
+<link href="http://www.zotero.org/styles/thu-vien-viet-nam-tuy-chinh-v3" rel
     <author><name>pdt6153-lgtm</name></author>
     <category citation-format="numeric"/>
     <category field="generic-base"/>
@@ -140,7 +140,7 @@
     </layout>
   </citation>
 
-  <bibliography entry-spacing="0" line-spacing="1" second-field-align="flush">
+  <bibliography entry-spacing="0" line-spacing="1">
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]. "/>
       <choose>
