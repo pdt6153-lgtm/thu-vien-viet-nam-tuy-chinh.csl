@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="vi-VN" page-range-format="expanded">
   <info>
-    <title>Thư viện Việt Nam - phân nhóm ngôn ngữ và Internet</title>
-    <id>http://www.zotero.org/styles/thu-vien-viet-nam-phan-nhom</id>
-    <link href="http://www.zotero.org/styles/thu-vien-viet-nam-phan-nhom" rel="self"/>
+    <title>Thư viện Việt Nam - kiểu số tùy chỉnh</title>
+    <id>http://www.zotero.org/styles/thu-vien-viet-nam-tuy-chinh</id>
+    <link href="http://www.zotero.org/styles/thu-vien-viet-nam-tuy-chinh" rel="self"/>
     <author><name>pdt6153-lgtm</name></author>
     <category citation-format="numeric"/>
     <category field="generic-base"/>
-    <summary>Sắp xếp tài liệu tiếng Việt, tiếng Anh, rồi tài liệu Internet; đánh số dạng [1].</summary>
-    <updated>2026-09-28T14:30:00+00:00</updated>
+    <summary>Kiểu trích dẫn số tùy chỉnh cho tài liệu tiếng Việt.</summary>
+    <updated>2026-09-28T14:00:00+00:00</updated>
   </info>
 
   <macro name="author">
@@ -22,29 +22,12 @@
     </names>
   </macro>
 
-  <macro name="author-sort">
-    <names variable="author">
-      <name name-as-sort-order="all" sort-separator=" " initialize="false"/>
-      <substitute>
-        <names variable="editor"/>
-        <text variable="publisher"/>
-        <text variable="title"/>
-      </substitute>
-    </names>
-  </macro>
-
-  <macro name="sort-group">
-    <choose>
-      <if type="webpage post post-weblog" match="any"><text value="3"/></if>
-      <else-if locale="vi"><text value="1"/></else-if>
-      <else><text value="2"/></else>
-    </choose>
-  </macro>
-
   <macro name="author-year">
     <group delimiter="">
       <text macro="author"/>
-      <date variable="issued" prefix=" (" suffix=")"><date-part name="year"/></date>
+      <date variable="issued" prefix=" (" suffix=")">
+        <date-part name="year"/>
+      </date>
     </group>
   </macro>
 
@@ -76,10 +59,15 @@
         <text variable="title" font-style="italic"/>
         <group prefix="(" suffix=")" delimiter=", ">
           <group delimiter=" ">
-            <names variable="translator"><name initialize="false" delimiter=", " and="text"/></names>
+            <names variable="translator">
+              <name initialize="false" delimiter=", " and="text"/>
+            </names>
             <text value="dịch"/>
           </group>
-          <group delimiter=" "><text value="dịch từ tiếng"/><text variable="language"/></group>
+          <group delimiter=" ">
+            <text value="dịch từ tiếng"/>
+            <text variable="language"/>
+          </group>
         </group>
       </group>
       <text variable="volume" prefix="Tập "/>
@@ -147,26 +135,36 @@
 
   <citation collapse="citation-number">
     <sort><key variable="citation-number"/></sort>
-    <layout prefix="[" suffix="]" delimiter=", "><text variable="citation-number"/></layout>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
   </citation>
 
   <bibliography entry-spacing="0" line-spacing="1" second-field-align="flush">
-    <sort>
-      <key macro="sort-group" sort="ascending"/>
-      <key macro="author-sort" sort="ascending"/>
-      <key variable="issued" sort="ascending"/>
-      <key variable="title" sort="ascending"/>
-    </sort>
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]. "/>
       <choose>
-        <if type="book" variable="translator" match="all"><text macro="translated-book"/></if>
-        <else-if type="book chapter" match="any"><text macro="book"/></else-if>
-        <else-if type="article-journal article-magazine article-newspaper" match="any"><text macro="article"/></else-if>
-        <else-if type="paper-conference" match="any"><text macro="conference"/></else-if>
-        <else-if type="thesis" match="any"><text macro="thesis"/></else-if>
-        <else-if type="webpage post post-weblog" match="any"><text macro="webpage"/></else-if>
-        <else><text macro="book"/></else>
+        <if type="book" variable="translator" match="all">
+          <text macro="translated-book"/>
+        </if>
+        <else-if type="book chapter" match="any">
+          <text macro="book"/>
+        </else-if>
+        <else-if type="article-journal article-magazine article-newspaper" match="any">
+          <text macro="article"/>
+        </else-if>
+        <else-if type="paper-conference" match="any">
+          <text macro="conference"/>
+        </else-if>
+        <else-if type="thesis" match="any">
+          <text macro="thesis"/>
+        </else-if>
+        <else-if type="webpage post post-weblog" match="any">
+          <text macro="webpage"/>
+        </else-if>
+        <else>
+          <text macro="book"/>
+        </else>
       </choose>
     </layout>
   </bibliography>
