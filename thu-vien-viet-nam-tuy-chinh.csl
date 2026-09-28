@@ -140,9 +140,9 @@
     </layout>
   </citation>
 
-  <bibliography entry-spacing="0" line-spacing="1">
-    <layout suffix=".">
-      <text variable="citation-number" prefix="[" suffix="]. "/>
+<bibliography entry-spacing="0" line-spacing="1" second-field-align="flush">
+  <layout suffix=".">
+    <text variable="citation-number" prefix="[" suffix="]. "/>
       <choose>
         <if type="book" variable="translator" match="all">
           <text macro="translated-book"/>
